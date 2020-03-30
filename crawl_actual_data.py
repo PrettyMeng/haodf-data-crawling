@@ -173,8 +173,8 @@ if __name__ == "__main__":
     output_file = open("conversation_in_"+configs.year,'w')
     problematic_urls_file = open("problematic_urls_"+configs.year,'w')
 
-    headers = {'User-Agent':"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"}
-    # headers = 
+#     headers = {'User-Agent':"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"}
+    headers = 
 
     parser = MyHTMLParser(output_file)
     parser.cnt = configs.start_id - 1
