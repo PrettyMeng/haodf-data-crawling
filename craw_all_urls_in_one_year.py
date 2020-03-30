@@ -75,10 +75,7 @@ if __name__ == "__main__":
 
 
     for date_url_cpy in tqdm(date_urls):
-        ###############################
         date_url = date_url_cpy.strip()
-        # print(f"date_url:\n{date_url}")
-        ##############################
         print(f"Crawl urls from:\n{date_url.strip()}")
         parser.total_page_number = -1
         current_page_number = 0
@@ -88,7 +85,6 @@ if __name__ == "__main__":
                 if not try_again:
                     current_page_number += 1
                     date_url = date_url[:-len(str(current_page_number-1))-1]+str(current_page_number)+"/"
-                # print(f"date_url = {date_url}")
                 request = urllib.request.Request(date_url,headers=headers)
                 time.sleep(0.1+0.1*random.random())
                 response = urllib.request.urlopen(request).read().decode('GBK')
@@ -115,7 +111,6 @@ if __name__ == "__main__":
                 print(f"{date_url_cpy.strip()}\n",file=error_date_url_file)
                 if parser.total_page_number == current_page_number:
                     break
-                # exit(0)
         print(f"Total pages today: {parser.total_page_number}")
             
             
