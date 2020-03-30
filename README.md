@@ -35,7 +35,7 @@ $ python3 crawl_actual_data.py -year **** -start_id 1
 
 一般来说不会因为异常中断，并且会输出有问题的url到一个叫`problematic_urls_****`的文件中。
 
-输入`control c`能让程序中断，并且输出当前正在处理的页面的url，当继续运行时，可以删掉`all_urls_in_****`中已经提取过的ur，最好也看一眼输出文件`conversation_in_****`的情况，需要在重新运行命令时重填一下`start_id`	，当然后期统一处理id也是可以的，文件打开方式已经是'a'（追加模式）
+输入`control c`能让程序中断，并且输出当前正在处理的页面的url，当继续运行时，可以删掉`all_urls_in_****`中已经提取过的url，最好也看一眼输出文件`conversation_in_****`的情况，需要在重新运行命令时重填一下`start_id`	，当然后期统一处理id也是可以的，文件打开方式已经是'a'（追加模式）
 
 别忘了填一下`headers`
 
