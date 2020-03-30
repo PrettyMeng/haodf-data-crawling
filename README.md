@@ -47,9 +47,4 @@ Email:
 
 shu_chen@pku.edu.cn
 
-Wechat:
-
-cs32963
-
-
 
