@@ -173,7 +173,7 @@ if __name__ == "__main__":
     output_file = open("conversation_in_"+configs.year,'w')
     problematic_urls_file = open("problematic_urls_"+configs.year,'w')
 
-#     headers = {'User-Agent':"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"}
+    # headers = {'User-Agent':"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"}
     headers = 
 
     parser = MyHTMLParser(output_file)
@@ -217,7 +217,7 @@ if __name__ == "__main__":
                     if not inner_page_try_again:
                         current_inner_page_number += 1
                         parser.current_page = current_inner_page_number
-                    if current_inner_page_number == parser.total_page + 1:
+                    if current_inner_page_number >= parser.total_page + 1:
                         break
                     page_url = url_stem+"_"+str(current_inner_page_number)+".htm"
                     # print(f"{page_url}")
