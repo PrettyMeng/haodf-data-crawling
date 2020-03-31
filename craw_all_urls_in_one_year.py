@@ -1,3 +1,4 @@
+
 import argparse
 import requests
 import urllib.request
@@ -77,22 +78,21 @@ if __name__ == "__main__":
     for date_url_cpy in tqdm(date_urls):
         date_url = date_url_cpy.strip()
         print(f"Crawl urls from:\n{date_url.strip()}")
-        parser.total_page_number = -1
+        parser.total_page_number = 1
         current_page_number = 0
         try_again = False
         while(True):
             try:
                 if not try_again:
                     current_page_number += 1
+                    if parser.total_page_number < current_page_number:
+                        break
                     date_url = date_url[:-len(str(current_page_number-1))-1]+str(current_page_number)+"/"
-                    parser.total_page_number = 1
                 request = urllib.request.Request(date_url,headers=headers)
                 time.sleep(0.3+0.1*random.random())
                 response = urllib.request.urlopen(request).read().decode('GBK')
                 try_again = False
                 parser.feed(response)
-                if parser.total_page_number < current_page_number:
-                    break
             except urllib.error.HTTPError as e:
                 if e.code == 403:
                     print(f"{date_url} {e.reason}")
